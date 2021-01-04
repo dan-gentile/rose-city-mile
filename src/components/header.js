@@ -1,35 +1,27 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import { Container } from "./layoutComponents"
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import HeaderImg from "./HeaderImg";
+import Rose from "../images/rose.png";
+import SmallCTAButton from "./SmallCTAButton";
 
-const Header = ({ siteTitle, className }) => (
-  <header className={className}>
-    <Container>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </Container>
-  </header>
-)
+const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+  background: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const Header = () => (
+  <StyledHeader>
+    <HeaderImg src={Rose} alt="Rose Flower Logo" />
+    <SmallCTAButton name="Register" type="button" />
+  </StyledHeader>
+);
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-const StyledHeader = styled(Header)`
-  color: var(--white);
-  background: var(--primary-color);
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  h1 {
-    margin: 0;
-  }
-`
-
-export default StyledHeader
+export default Header;
