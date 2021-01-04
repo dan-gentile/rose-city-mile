@@ -1,9 +1,9 @@
-import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import HeaderImg from "./HeaderImg";
 import Rose from "../images/rose.png";
-import SmallCTAButton from "./SmallCTAButton";
+import SmallCTAButton from "./Buttons/SmallCTAButton";
+import Navbar from "./Navbar";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -17,11 +17,14 @@ const StyledHeader = styled.header`
   justify-content: space-evenly;
 `;
 
-const Header = () => (
-  <StyledHeader>
-    <HeaderImg src={Rose} alt="Rose Flower Logo" />
-    <SmallCTAButton name="Register" type="button" />
-  </StyledHeader>
-);
+const Header = () => {
+  return (
+    <StyledHeader>
+      <HeaderImg src={Rose} alt="Rose Flower Logo" />
+      <Navbar />
+      <SmallCTAButton name="Register" type="button" />
+    </StyledHeader>
+  );
+};
 
 export default Header;

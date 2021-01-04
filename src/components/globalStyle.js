@@ -7,12 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     --white: #FFFAFF;
     --grey: #3b3b3b;
     --box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+    --speed: 500ms; 
   }
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: muli, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   html {
     -ms-text-size-adjust: 100%;
