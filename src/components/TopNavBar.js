@@ -10,12 +10,15 @@ const Nav = styled.nav`
   width: 600px;
 
   @media (max-width: 1024px) {
+    display: ${({ open }) => (open ? "block" : "none")};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     width: 200px;
     height: 100vh;
     background-color: var(--grey);
     position: fixed;
     top: 0;
     right: 0;
+    transition: transform 0.3s ease-in;
   }
 
   ul {
@@ -31,23 +34,25 @@ const Nav = styled.nav`
       li,
       a,
       button {
+        /* opacity: ${({ open }) => (open ? 1 : 0)};
+        transition: all 0.2s linear; */
         margin: 25px 0;
       }
     }
   }
 `;
 
-const TopNavbar = () => {
-  const [open, setOpen] = useState(false);
+const TopNavbar = ({ open }) => {
+  const [show, setShow] = useState(false);
 
   return (
-    <Nav>
+    <Nav open={open}>
       <ul>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/details/">Details</NavLink>
-        <ExternalLink onClick={() => setOpen(!open)}>
+        <ExternalLink onClick={() => setShow(!show)}>
           Results
-          {open && <DropDown />}
+          {show && <DropDown />}
         </ExternalLink>
         <ExternalLink href="https://shop.rosecitytrack.com/">Shop</ExternalLink>
         <SmallCTAButton name="Register" type="button" />

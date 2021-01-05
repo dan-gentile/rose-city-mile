@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HeaderImg from "./HeaderImg";
 import Rose from "../images/rose.png";
-
-import TopNavbar from "./TopNavBar";
+import Burger from "./Burger";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -17,8 +16,12 @@ const StyledHeader = styled.header`
   justify-content: space-evenly;
 
   @media (max-width: 1024px) {
-    justify-content: center;
-    margin-right: 300px;
+    justify-content: space-between;
+    padding: 0 80px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 40px;
   }
 `;
 
@@ -26,7 +29,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <HeaderImg src={Rose} alt="Rose Flower Logo" />
-      <TopNavbar />
+      <Burger />
     </StyledHeader>
   );
 };
