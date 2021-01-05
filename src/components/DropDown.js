@@ -11,7 +11,6 @@ const StyledDropDown = styled.div`
   border-radius: 10px;
   padding: 1rem;
   overflow: hidden;
-  transition: height var(--speed) ease;
 
   @media (max-width: 1024px) {
     background-color: var(--primary-color);
