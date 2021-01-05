@@ -17,6 +17,7 @@ const Nav = styled.nav`
     position: fixed;
     top: 0;
     right: 0;
+    box-shadow: var(--box-shadow);
     transition: transform 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out;
     opacity: ${({ open }) => (open ? 1 : 0)};

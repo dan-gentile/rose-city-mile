@@ -9,6 +9,7 @@ const StyledDropDown = styled.div`
   transform: translateX(200px);
   background-color: var(--primary-color);
   border-radius: 10px;
+  box-shadow: var(--box-shadow);
   padding: 1rem;
   overflow: hidden;
 
