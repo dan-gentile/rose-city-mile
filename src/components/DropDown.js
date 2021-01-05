@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styled from "styled-components";
 import ExternalLink from "./Links/ExternalLink";
 
@@ -8,11 +7,17 @@ const StyledDropDown = styled.div`
   top: 58px;
   width: 180px;
   transform: translateX(-20%);
-  background-color: var(--grey);
+  background-color: var(--primary-color);
   border-radius: 10px;
   padding: 1rem;
   overflow: hidden;
   transition: height var(--speed) ease;
+
+  @media (max-width: 1024px) {
+    background-color: var(--primary-color);
+    transform: translateX(-130%);
+    top: 160px;
+  }
 `;
 
 const MenuItem = styled.li`

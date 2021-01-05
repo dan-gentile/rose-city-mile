@@ -15,7 +15,12 @@ const StyledLink = styled((props) => <Link {...props} />)`
 const NavLink = (props) => {
   return (
     <li>
-      <StyledLink {...props}>{props.children}</StyledLink>
+      <StyledLink
+        activeStyle={{ fontWeight: "bold", color: "#FFFAFF" }}
+        {...props}
+      >
+        {props.children}
+      </StyledLink>
     </li>
   );
 };

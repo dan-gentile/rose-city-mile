@@ -7,6 +7,7 @@ const StyledCTAButton = styled.button`
   border: none;
   outline: none;
   color: #fff;
+  font-weight: 700;
   background-color: var(--primary-color);
   border-radius: 40px;
   box-shadow: var(--box-shadow);
