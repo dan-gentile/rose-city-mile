@@ -5,6 +5,7 @@ import ExternalLink from "./Links/ExternalLink";
 import DropDown from "./DropDown";
 import SmallCTAButton from "./Buttons/SmallCTAButton";
 import { useState } from "react";
+import NavButton from "./Buttons/NavButton";
 
 const Nav = styled.nav`
   width: 600px;
@@ -37,7 +38,7 @@ const Nav = styled.nav`
       li,
       a,
       button {
-        transition: all 1s ease-in-out;
+        transition: transform 1s ease-in-out;
         transform: ${({ open }) =>
           open ? "translateX(0)" : "translateX(50%)"};
         margin: 25px 0;
@@ -54,10 +55,12 @@ const TopNavbar = ({ open }) => {
       <ul>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/details/">Details</NavLink>
-        <ExternalLink onClick={() => setShow(!show)}>
-          Results
-          {show && <DropDown />}
-        </ExternalLink>
+        <NavButton
+          name="Results"
+          type="button"
+          onClick={() => setShow(!show)}
+        />
+        {show && <DropDown />}
         <ExternalLink href="https://shop.rosecitytrack.com/">Shop</ExternalLink>
         <SmallCTAButton name="Register" type="button" />
       </ul>

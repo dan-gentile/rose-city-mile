@@ -6,7 +6,7 @@ const StyledDropDown = styled.div`
   position: absolute;
   top: 58px;
   width: 180px;
-  transform: translateX(-20%);
+  transform: translateX(200px);
   background-color: var(--primary-color);
   border-radius: 10px;
   padding: 1rem;
@@ -15,8 +15,8 @@ const StyledDropDown = styled.div`
 
   @media (max-width: 1024px) {
     background-color: var(--primary-color);
-    transform: translateX(-130%);
-    top: 160px;
+    transform: translateX(-115%);
+    top: 200px;
   }
 `;
 
