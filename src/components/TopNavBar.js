@@ -10,15 +10,16 @@ const Nav = styled.nav`
   width: 600px;
 
   @media (max-width: 1024px) {
-    display: ${({ open }) => (open ? "block" : "none")};
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     width: 200px;
     height: 100vh;
     background-color: var(--grey);
     position: fixed;
     top: 0;
     right: 0;
-    transition: transform 0.3s ease-in;
+    transition: transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    opacity: ${({ open }) => (open ? 1 : 0)};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   }
 
   ul {
@@ -29,13 +30,16 @@ const Nav = styled.nav`
 
     @media (max-width: 1024px) {
       flex-direction: column;
+      align-items: flex-start;
+      padding-left: 35px;
       margin-top: 60px;
 
       li,
       a,
       button {
-        /* opacity: ${({ open }) => (open ? 1 : 0)};
-        transition: all 0.2s linear; */
+        transition: all 1s ease-in-out;
+        transform: ${({ open }) =>
+          open ? "translateX(0)" : "translateX(50%)"};
         margin: 25px 0;
       }
     }
