@@ -3,6 +3,7 @@ import { GlobalStyle } from "./globalStyle";
 import { MainWrapper } from "./LayoutComponents";
 import Header from "./Header";
 import Banner from "./Banner";
+import LogoBar from "./LogoBar";
 
 const Layout = ({ children }) => {
   const [showBanner, setShowBanner] = useState(true);
@@ -18,10 +19,11 @@ const Layout = ({ children }) => {
         <Header />
         {showBanner && (
           <Banner handleClick={handleClick}>
-            2020 Rose Cite Mile Announced!
+            2021 Rose Cite Mile Announced!
           </Banner>
         )}
         <main>{children}</main>
+        <LogoBar />
       </MainWrapper>
     </>
   );

@@ -5,8 +5,6 @@ import Rose from "../images/rose.png";
 import Burger from "./Burger";
 
 const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
   width: 100%;
   height: 60px;
   z-index: 1;

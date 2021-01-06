@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeroText = styled.div`
-  height: 200px;
+  height: 220px;
   width: 600px;
   margin: 40px auto;
   padding: 16px;

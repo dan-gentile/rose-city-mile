@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const MainWrapper = styled.div`
   margin: 0;
-  display: flex;
   min-height: 100vh;
   min-width: 100vw;
+  display: flex;
   flex-direction: column;
 `;
 

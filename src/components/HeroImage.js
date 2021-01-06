@@ -5,12 +5,10 @@ import LargeCTAButton from "./Buttons/LargeCTAButton";
 import HeroText from "./HeroText";
 
 const StyledHeroImage = styled.div`
-  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 60px;
   width: 100%;
   height: 800px;
   background-image: url(${Image});

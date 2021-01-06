@@ -22,7 +22,6 @@ export const GlobalStyle = createGlobalStyle`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-    overflow: hidden;
   }
 
   a:link {
