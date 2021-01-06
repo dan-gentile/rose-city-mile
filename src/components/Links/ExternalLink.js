@@ -5,7 +5,7 @@ const StyledAnchor = styled.a`
   color: #fff;
   cursor: pointer;
   :hover {
-    color: #141414;
+    color: var(--black);
   }
   :active {
     color: #ed1f24;

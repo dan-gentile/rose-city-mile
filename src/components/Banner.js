@@ -7,13 +7,13 @@ const StyledBanner = styled.div`
   width: 100%;
   height: 40px;
   background: #ed1f24;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 120px;
   color: #fff;
   font-weight: 600;
+  z-index: 2;
 
   @media (max-width: 1024px) {
     padding: 0 80px;

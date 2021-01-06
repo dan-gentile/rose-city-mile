@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #ed1f24;
     --white: #FFFAFF;
     --grey: #3b3b3b;
+    --black: #141414;
     --box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
     --speed: 500ms; 
   }

@@ -10,7 +10,7 @@ const StyledNavButton = styled.button`
   cursor: pointer;
 
   :hover {
-    color: #141414;
+    color: var(--black);
   }
 `;
 

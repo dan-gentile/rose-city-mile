@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 const StyledLink = styled((props) => <Link {...props} />)`
   color: #fff;
   :hover {
-    color: #141414;
+    color: var(--black);
   }
   :active {
     color: #ed1f24;
