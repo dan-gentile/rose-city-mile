@@ -4,6 +4,7 @@ import { MainWrapper } from "./LayoutComponents";
 import Header from "./Header";
 import Banner from "./Banner";
 import LogoBar from "./LogoBar";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
   const [showBanner, setShowBanner] = useState(true);
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
         )}
         <main>{children}</main>
         <LogoBar />
+        <Footer />
       </MainWrapper>
     </>
   );
