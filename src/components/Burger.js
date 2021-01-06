@@ -7,7 +7,7 @@ const StyledBurger = styled.div`
   height: 2rem;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 2;
+  z-index: 5;
   display: none;
 
   div {

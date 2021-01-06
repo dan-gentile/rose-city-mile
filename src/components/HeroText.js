@@ -12,6 +12,7 @@ const StyledHeroText = styled.div`
   background-color: var(--white);
   color: var(--black);
   overflow: hidden;
+  opacity: 0.9;
   z-index: 2;
 
   p {
