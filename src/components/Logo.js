@@ -4,10 +4,6 @@ import styled from "styled-components";
 const StyledLogo = styled.img`
   height: 100px;
   margin: 0 22px;
-
-  @media (max-width: 1024px) {
-    margin-top: 40px;
-  }
 `;
 
 const StyledAnchor = styled.a`

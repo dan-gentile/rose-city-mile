@@ -10,8 +10,9 @@ import SocialLink from "./SocialLink";
 
 const StyledFooter = styled.footer`
   width: 100%;
-  height: 200px;
+  height: 160px;
   background-color: var(--grey);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

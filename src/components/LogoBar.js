@@ -17,6 +17,13 @@ const StyledLogoBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  @media (max-width: 1007px) {
+    height: 400px;
+  }
+  @media (max-width: 475px) {
+    height: 500px;
+  }
 `;
 
 const LogoBar = () => {
