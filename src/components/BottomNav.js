@@ -5,7 +5,7 @@ import NavLink from "./Links/NavLink";
 
 const StyledBottomNav = styled.nav`
   height: 100%;
-  width: 180px;
+  width: 200px;
 
   @media (max-width: 500px) {
     display: none;
