@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Article from "../components/Article";
 
-const SecondPage = () => (
+const Details = () => (
   <Layout>
     <SEO title="Details" />
     <Article>
@@ -53,4 +53,4 @@ const SecondPage = () => (
   </Layout>
 );
 
-export default SecondPage;
+export default Details;

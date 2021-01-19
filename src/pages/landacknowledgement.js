@@ -5,8 +5,8 @@ import Article from "../components/Article";
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Land Acknowledgement" />
     <Article>
+      <SEO title="Land Acknowledgement" />
       <h1>Land Acknowledgement</h1>
       <p>
         The Rose City Mile takes place in Southwest Portland. We would like to

@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
 
 const Header = () => {
   return (
-    <StyledHeader>
+    <StyledHeader id="home">
       <Burger />
     </StyledHeader>
   );

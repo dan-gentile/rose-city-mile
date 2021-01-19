@@ -6,6 +6,7 @@ import DropDown from "./DropDown";
 import SmallCTAButton from "./Buttons/SmallCTAButton";
 import { useState } from "react";
 import NavButton from "./Buttons/NavButton";
+import ScrollToBtn from "./Links/scrollTo";
 
 const Nav = styled.nav`
   width: 200px;
@@ -19,7 +20,7 @@ const Nav = styled.nav`
   transition: opacity 0.4s ease-in-out;
   opacity: ${({ open }) => (open ? 1 : 0)};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-  z-index: 2;
+  z-index: 1;
 
   ul {
     width: 100%;
@@ -46,8 +47,8 @@ const TopNavbar = ({ open }) => {
   return (
     <Nav open={open}>
       <ul>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/details/">Details</NavLink>
+        <ScrollToBtn id="home" name="Home" />
+        <ScrollToBtn id="details" name="Details" />
         <NavButton
           name="Results"
           type="button"

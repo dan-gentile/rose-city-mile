@@ -4,20 +4,15 @@ import ExternalLink from "./Links/ExternalLink";
 
 const StyledDropDown = styled.div`
   position: absolute;
-  top: 58px;
   width: 180px;
-  transform: translateX(200px);
   background-color: var(--primary-color);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   padding: 1rem;
   overflow: hidden;
 
-  @media (max-width: 1024px) {
-    background-color: var(--primary-color);
-    transform: translateX(-115%);
-    top: 200px;
-  }
+  transform: translateX(-115%);
+  top: 200px;
 `;
 
 const MenuItem = styled.li`

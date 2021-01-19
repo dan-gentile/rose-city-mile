@@ -20,8 +20,8 @@ const StyledArticle = styled.article`
   }
 `;
 
-const Article = ({ children }) => {
-  return <StyledArticle>{children}</StyledArticle>;
+const Article = ({ children, id }) => {
+  return <StyledArticle id={id}>{children}</StyledArticle>;
 };
 
 export default Article;
