@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
           </Banner>
         )}
         <main>{children}</main>
-        {/* <LogoBar /> */}
+        <LogoBar />
         <Footer />
       </MainWrapper>
     </>

@@ -23,6 +23,11 @@ const StyledHeroText = styled.div`
     font-size: 18px;
   }
 
+  @media (max-width: 1400px) {
+    height: 260px;
+    width: 500px;
+  }
+
   @media (max-width: 600px) {
     height: 260px;
     width: 400px;

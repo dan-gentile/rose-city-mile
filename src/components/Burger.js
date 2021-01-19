@@ -7,11 +7,19 @@ const StyledBurger = styled.div`
   height: 2rem;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 20;
+  z-index: 100;
   display: flex;
   position: fixed;
   top: 50px;
   right: 116px;
+
+  @media (max-width: 520px) {
+    right: 70px;
+  }
+
+  @media (max-width: 400px) {
+    right: 40px;
+  }
 
   div {
     width: 2rem;
