@@ -3,17 +3,20 @@ import styled from "styled-components";
 import scrollTo from "gatsby-plugin-smoothscroll";
 
 const StyledScroll = styled.button`
+  border: none;
+  outline: none;
+  background-color: var(--grey);
   color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+
   :hover {
     color: var(--black);
-  }
-  :active {
-    color: #ed1f24;
   }
 `;
 
 const ScrollToBtn = ({ id, name }) => {
-  return <button onClick={() => scrollTo(`#${id}`)}>{name}</button>;
+  return <StyledScroll onClick={() => scrollTo(`#${id}`)}>{name}</StyledScroll>;
 };
 
 export default ScrollToBtn;

@@ -9,7 +9,7 @@ import NavButton from "./Buttons/NavButton";
 import ScrollToBtn from "./Links/scrollTo";
 
 const Nav = styled.nav`
-  width: 200px;
+  width: 400px;
   height: 100vh;
   background-color: var(--grey);
   position: fixed;
@@ -22,14 +22,22 @@ const Nav = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   z-index: 1;
 
+  @media (max-width: 600px) {
+    width: 200px;
+  }
+
   ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 35px;
-    margin-top: 60px;
+    padding-left: 80px;
+    margin-top: 120px;
+
+    @media (max-width: 600px) {
+      padding-left: 40px;
+    }
 
     li,
     a,

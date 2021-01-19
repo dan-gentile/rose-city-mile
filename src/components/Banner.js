@@ -13,7 +13,7 @@ const StyledBanner = styled.div`
   padding: 0 120px;
   color: #fff;
   font-weight: 600;
-  z-index: 2;
+  z-index: 1;
 
   @media (max-width: 1024px) {
     padding: 0 80px;
@@ -43,7 +43,7 @@ const CloseButton = styled.button`
 
 const Banner = (props) => {
   return (
-    <StyledBanner>
+    <StyledBanner id="home">
       <div></div>
       {props.children}
       <CloseButton onClick={props.handleClick}>X</CloseButton>

@@ -13,11 +13,7 @@ const StyledBurger = styled.div`
   top: 50px;
   right: 116px;
 
-  @media (max-width: 520px) {
-    right: 70px;
-  }
-
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     right: 40px;
   }
 
