@@ -1,0 +1,108 @@
+.home {
+  display: grid;
+  height: 800px;
+  margin: 0 auto;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  opacity: 0;
+  animation: opacity 2s ease-in forwards;
+}
+
+.text {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(-10%);
+  animation: move-it 2s forwards;
+}
+
+.logo {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  height: 620px;
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image::before {
+  background-image: url(../../images/rcm-logo.png);
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  animation: opacity 1850ms 500ms ease-in forwards;
+}
+.rose-svg {
+  height: 360px;
+  width: 200px;
+  fill: #3b3b3b;
+  fill-opacity: 0;
+  animation: fill-in 500ms 2s ease-in forwards;
+}
+
+.cls-1 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 262;
+  stroke-dashoffset: 262;
+  animation: draw 2s ease-in forwards;
+}
+
+.cls-2 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 266;
+  stroke-dashoffset: 266;
+  animation: draw 2s ease-in forwards;
+}
+
+.cls-3 {
+  stroke: #3b3b3b;
+  stroke-width: 1px;
+  stroke-dasharray: 1156;
+  stroke-dashoffset: 1156;
+  animation: draw 2s ease-in forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-in {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move-it {
+  to {
+    transform: translateY(0);
+  }
+}

@@ -6,9 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import BottomNav from "./BottomNav";
 import SocialLink from "./SocialLink";
-import Logo from "../images/Logos/RCTC.png";
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -48,19 +46,9 @@ const StyledUl = styled.ul`
   }
 `;
 
-const StyledDiv = styled.div`
-  height: 100%;
-  width: 200px;
-
-  @media (max-width: 820px) {
-    display: none;
-  }
-`;
-
 const Footer = () => {
   return (
     <StyledFooter>
-      <StyledDiv></StyledDiv>
       <StyledUl>
         <SocialLink
           title="Facebook"
@@ -81,7 +69,6 @@ const Footer = () => {
           fontAwesomeIcon={<FontAwesomeIcon icon={faInstagram} size="2x" />}
         />
       </StyledUl>
-      <BottomNav />
     </StyledFooter>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "../images/hero-image.png";
 import LargeCTAButton from "./Buttons/LargeCTAButton";
 import HeroText from "./HeroText";
 
@@ -11,7 +10,6 @@ const StyledHeroImage = styled.div`
   justify-content: center;
   width: 100%;
   height: 800px;
-  background-image: url(${Image});
   background-size: cover;
 
   button {

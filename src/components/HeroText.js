@@ -6,18 +6,21 @@ const StyledHeroText = styled.div`
   width: 600px;
   margin: 40px auto;
   padding: 16px;
-  text-align: center;
-  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.6);
-  border-radius: 25px;
-  background-color: var(--white);
-  color: var(--black);
-  overflow: hidden;
-  opacity: 0.9;
+  color: var(--grey);
   z-index: 2;
 
+  h1 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
   p {
-    margin-top: 5px;
-    font-size: 17px;
+    font-size: 18px;
   }
 
   @media (max-width: 600px) {
@@ -39,7 +42,7 @@ const HeroText = () => {
         Save the date for the 4th Annual Rose City Mile! We’re hoping to host an
         in-person event this summer, but it depends on whether we’re able to
         resume group activities safely in light of the ongoing pandemic. For
-        this reason, we have not yet opened registration
+        this reason, we have not yet opened registration.
       </p>
     </StyledHeroText>
   );

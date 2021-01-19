@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #ed1f24;
     --white: #FFFAFF;
     --grey: #3b3b3b;
-    --black: #141414;
+    --background: #ffe1b6;
     --box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
     --speed: 500ms; 
   }
@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
     min-width: 350px;
+    background-color: var(--background)
   }
 
   a:link {

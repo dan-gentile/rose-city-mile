@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SocialA = styled.a`
-  color: var(--white);
+  color: var(--background);
 
   :hover {
     color: var(--black);

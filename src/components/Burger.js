@@ -7,13 +7,16 @@ const StyledBurger = styled.div`
   height: 2rem;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 5;
-  display: none;
+  z-index: 20;
+  display: flex;
+  position: fixed;
+  top: 50px;
+  right: 116px;
 
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: var(--white);
+    background-color: var(--grey);
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.2s linear;
@@ -27,10 +30,6 @@ const StyledBurger = styled.div`
     &:nth-child(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
-  }
-
-  @media (max-width: 1024px) {
-    display: flex;
   }
 `;
 

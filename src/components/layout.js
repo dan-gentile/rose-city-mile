@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GlobalStyle } from "./globalStyle";
 import { MainWrapper } from "./LayoutComponents";
 import Header from "./Header";
@@ -7,7 +7,11 @@ import LogoBar from "./LogoBar";
 import Footer from "./footer";
 
 const Layout = ({ children }) => {
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
+
+  useEffect(() => {
+    setShowBanner(true);
+  }, []);
 
   const handleClick = () => {
     setShowBanner(false);
@@ -24,7 +28,7 @@ const Layout = ({ children }) => {
           </Banner>
         )}
         <main>{children}</main>
-        <LogoBar />
+        {/* <LogoBar /> */}
         <Footer />
       </MainWrapper>
     </>

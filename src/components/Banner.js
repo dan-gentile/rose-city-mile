@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const StyledBanner = styled.div`
   position: absolute;
-  top: 60px;
+  top: 0px;
   width: 100%;
   height: 40px;
-  background: #ed1f24;
+  background: var(--grey);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +33,7 @@ const CloseButton = styled.button`
   font-size: 1.25rem;
   border: none;
   outline: none;
-  background-color: var(--primary-color);
+  background-color: var(--grey);
   cursor: pointer;
 
   :hover {

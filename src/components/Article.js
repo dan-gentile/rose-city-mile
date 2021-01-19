@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledArticle = styled.article`
   width: 60%;
-  height: 800px;
+  min-height: 800px;
   padding: 100px 0;
   margin: 0 auto;
   display: flex;

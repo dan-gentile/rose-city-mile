@@ -8,43 +8,34 @@ import { useState } from "react";
 import NavButton from "./Buttons/NavButton";
 
 const Nav = styled.nav`
-  width: 600px;
-
-  @media (max-width: 1024px) {
-    width: 200px;
-    height: 100vh;
-    background-color: var(--grey);
-    position: fixed;
-    top: 0;
-    right: 0;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out;
-    opacity: ${({ open }) => (open ? 1 : 0)};
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-    z-index: 4;
-  }
+  width: 200px;
+  height: 100vh;
+  background-color: var(--grey);
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  z-index: 2;
 
   ul {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 35px;
+    margin-top: 60px;
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: 35px;
-      margin-top: 60px;
-
-      li,
-      a,
-      button {
-        transition: transform 1s ease-in-out;
-        transform: ${({ open }) =>
-          open ? "translateX(0)" : "translateX(50%)"};
-        margin: 25px 0;
-      }
+    li,
+    a,
+    button {
+      transition: transform 1s ease-in-out;
+      transform: ${({ open }) => (open ? "translateX(0)" : "translateX(50%)")};
+      margin: 25px 0;
     }
   }
 `;
