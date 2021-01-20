@@ -7,6 +7,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `a3rf0qir`,
+        dataset: `production`,
+        // a token with read permissions is required
+        // if you have a private dataset
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        overlayDrafts: true,
+        watchMode: true,
+        graphqlTag: "default",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

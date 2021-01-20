@@ -21,11 +21,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <MainWrapper>
         <Header />
-        {showBanner && (
-          <Banner handleClick={handleClick}>
-            2021 Rose Cite Mile Announced!
-          </Banner>
-        )}
+        {showBanner && <Banner handleClick={handleClick} />}
         <main>{children}</main>
         <Footer />
       </MainWrapper>

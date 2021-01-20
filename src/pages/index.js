@@ -20,7 +20,6 @@ const IndexPage = () => (
     <LogoBar />
     <Article id="details">
       <h1>Details</h1>
-
       <p>
         Rose City Mile is a fun, competitive, and accessible opportunity for
         runners of all ages and abilities to test themselves in the mile. We’re

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { StaticQuery, graphql } from "gatsby";
 
 const StyledBanner = styled.div`
   position: absolute;
@@ -45,7 +46,25 @@ const Banner = (props) => {
   return (
     <StyledBanner id="home">
       <div></div>
-      {props.children}
+      <StaticQuery
+        query={graphql`
+          {
+            allSanityBanner {
+              edges {
+                node {
+                  id
+                  banner
+                }
+              }
+            }
+          }
+        `}
+        render={(data) =>
+          data.allSanityBanner.edges.map(({ node }) => {
+            return <p key={node.id}>{node.banner}</p>;
+          })
+        }
+      />
       <CloseButton onClick={props.handleClick}>X</CloseButton>
     </StyledBanner>
   );
