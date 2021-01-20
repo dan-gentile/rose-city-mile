@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ExternalLink from "./Links/ExternalLink";
+import { StaticQuery, graphql } from "gatsby";
 
 const StyledDropDown = styled.div`
   position: absolute;
@@ -24,18 +25,38 @@ const MenuItem = styled.li`
 
 const DropDown = () => {
   return (
-    <>
-      <StyledDropDown>
-        <MenuItem>
-          <ExternalLink href="https://www.facebook.com">Facebook</ExternalLink>
-        </MenuItem>
-        <MenuItem>
-          <ExternalLink href="https://www.facebook.com">
-            2018 Results
-          </ExternalLink>
-        </MenuItem>
-      </StyledDropDown>
-    </>
+    <StyledDropDown>
+      <StaticQuery
+        query={graphql`
+          {
+            allSanityResultUrl(sort: { fields: [title], order: DESC }) {
+              edges {
+                node {
+                  title
+                  id
+                  link
+                }
+              }
+            }
+          }
+        `}
+        render={(data) =>
+          data.allSanityResultUrl.edges.map(({ node }) => {
+            return (
+              <MenuItem key={node.id}>
+                <ExternalLink
+                  href={node.link}
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                >
+                  {node.title}
+                </ExternalLink>
+              </MenuItem>
+            );
+          })
+        }
+      />
+    </StyledDropDown>
   );
 };
 

@@ -33,7 +33,6 @@ const Home = () => {
       </div>
       <div className="text">
         <HeroText />
-        <LargeCTAButton name="Register" />
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { StaticQuery, graphql } from "gatsby";
+import LargeCTAButton from "./Buttons/LargeCTAButton";
 
 const StyledHeroText = styled.div`
   height: 220px;
@@ -40,16 +42,45 @@ const StyledHeroText = styled.div`
 `;
 const HeroText = () => {
   return (
-    <StyledHeroText>
-      <h1>2021 Rose City Mile</h1>
-      <h4>June 26th 2021</h4>
-      <p>
-        Save the date for the 4th Annual Rose City Mile! We’re hoping to host an
-        in-person event this summer, but it depends on whether we’re able to
-        resume group activities safely in light of the ongoing pandemic. For
-        this reason, we have not yet opened registration.
-      </p>
-    </StyledHeroText>
+    <StaticQuery
+      query={graphql`
+        {
+          allSanityHomeText {
+            edges {
+              node {
+                id
+                headline
+                eventDate
+                shortDescription
+                ctaButton {
+                  ctaButtonUrl
+                  ctaButtonText
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={(data) =>
+        data.allSanityHomeText.edges.map(({ node }) => {
+          return (
+            <>
+              <StyledHeroText key={node.id}>
+                <h1>{node.headline}</h1>
+                <h4>{node.eventDate}</h4>
+                <p>{node.shortDescription}</p>
+              </StyledHeroText>
+              {node.ctaButton.ctaButtonText ? (
+                <LargeCTAButton
+                  name={node.ctaButton.ctaButtonText}
+                  url={node.ctaButton.ctaButtonUrl}
+                />
+              ) : null}
+            </>
+          );
+        })
+      }
+    />
   );
 };
 
