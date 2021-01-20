@@ -1,12 +1,7 @@
 import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Logo from "./Logo";
-
-import RoseCity from "../images/Logos/rctc-01.png";
-import Goodr from "../images/Logos/goodr-01.png";
-import TheFeed from "../images/Logos/the-feed-01.png";
-import Athletic from "../images/Logos/athletic-net-01.png";
-import ShowersPass from "../images/Logos/showerpass-01.png";
 
 const StyledLogoBar = styled.div`
   width: 100%;
@@ -27,11 +22,39 @@ const StyledLogoBar = styled.div`
 const LogoBar = () => {
   return (
     <StyledLogoBar>
-      <Logo src={Goodr} alt="Goodr Logo" />
-      <Logo src={Athletic} alt="Athletic Net Logo" />
-      <Logo src={RoseCity} alt="Rose City Logo" />
-      <Logo src={ShowersPass} alt="Showers Pass Logo" />
-      <Logo src={TheFeed} alt="The Feed Logo" />
+      <StaticQuery
+        query={graphql`
+          {
+            allSanitySponsorLogo {
+              edges {
+                node {
+                  sponsor
+                  sponsorWebsite
+                  sponsorImage {
+                    asset {
+                      fixed {
+                        src
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={(data) =>
+          data.allSanitySponsorLogo.edges.map(({ node }) => {
+            return (
+              <Logo
+                key={node.id}
+                url={node.sponsorWebsite}
+                alt={node.sponsor}
+                src={node.sponsorImage.asset.fixed.src}
+              />
+            );
+          })
+        }
+      />
     </StyledLogoBar>
   );
 };

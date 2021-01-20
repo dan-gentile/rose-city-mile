@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import SocialLink from "./SocialLink";
+import { StaticQuery, graphql } from "gatsby";
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -50,23 +51,52 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledUl>
-        <SocialLink
-          title="Facebook"
-          label="Link to Facebook Page"
-          socialLink="https://www.facebook.com/"
-          fontAwesomeIcon={<FontAwesomeIcon icon={faFacebook} size="2x" />}
-        />
-        <SocialLink
-          title="Twitter"
-          label="Link to Twitter Page"
-          socialLink="https://www.twitter.com/"
-          fontAwesomeIcon={<FontAwesomeIcon icon={faTwitter} size="2x" />}
-        />
-        <SocialLink
-          title="Instagram"
-          label="Link to Instagram Page"
-          socialLink="https://www.instagram.com/"
-          fontAwesomeIcon={<FontAwesomeIcon icon={faInstagram} size="2x" />}
+        <StaticQuery
+          query={graphql`
+            {
+              allSanitySocialLink {
+                edges {
+                  node {
+                    twitter
+                    instagram
+                    facebook
+                  }
+                }
+              }
+            }
+          `}
+          render={(data) =>
+            data.allSanitySocialLink.edges.map(({ node }) => {
+              return (
+                <>
+                  <SocialLink
+                    title="Facebook"
+                    label="Link to Facebook Page"
+                    socialLink={node.facebook}
+                    fontAwesomeIcon={
+                      <FontAwesomeIcon icon={faFacebook} size="2x" />
+                    }
+                  />
+                  <SocialLink
+                    title="Twitter"
+                    label="Link to Twitter Page"
+                    socialLink={node.twitter}
+                    fontAwesomeIcon={
+                      <FontAwesomeIcon icon={faTwitter} size="2x" />
+                    }
+                  />
+                  <SocialLink
+                    title="Instagram"
+                    label="Link to Instagram Page"
+                    socialLink={node.instagram}
+                    fontAwesomeIcon={
+                      <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    }
+                  />
+                </>
+              );
+            })
+          }
         />
       </StyledUl>
     </StyledFooter>

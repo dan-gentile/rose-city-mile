@@ -13,6 +13,7 @@ const StyledAnchor = styled.a`
 const Logo = (props) => {
   return (
     <StyledAnchor
+      key={props.key}
       href={props.link}
       target="_blank"
       referrerPolicy="no-referrer"
