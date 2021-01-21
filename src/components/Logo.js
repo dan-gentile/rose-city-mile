@@ -13,12 +13,12 @@ const StyledAnchor = styled.a`
 const Logo = (props) => {
   return (
     <StyledAnchor
-      key={props.key}
-      href={props.link}
+      key={props.id}
+      href={props.url}
       target="_blank"
       referrerPolicy="no-referrer"
     >
-      <StyledLogo src={props.src} alt={props.alt} />
+      <StyledLogo key={props.id} src={props.src} alt={props.alt} />
     </StyledAnchor>
   );
 };

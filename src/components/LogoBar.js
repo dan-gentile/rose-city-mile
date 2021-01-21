@@ -28,6 +28,7 @@ const LogoBar = () => {
             allSanitySponsorLogo {
               edges {
                 node {
+                  id
                   sponsor
                   sponsorWebsite
                   sponsorImage {
@@ -46,7 +47,7 @@ const LogoBar = () => {
           data.allSanitySponsorLogo.edges.map(({ node }) => {
             return (
               <Logo
-                key={node.id}
+                id={node.id}
                 url={node.sponsorWebsite}
                 alt={node.sponsor}
                 src={node.sponsorImage.asset.fixed.src}

@@ -1,6 +1,5 @@
 import React from "react";
 import HeroText from "../HeroText";
-import LargeCTAButton from "../Buttons/LargeCTAButton";
 import "./home.css";
 
 const Home = () => {

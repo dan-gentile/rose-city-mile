@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import NavLink from "./Links/NavLink";
 import ExternalLink from "./Links/ExternalLink";
 import DropDown from "./DropDown";
 import SmallCTAButton from "./Buttons/SmallCTAButton";
 import { useState } from "react";
 import NavButton from "./Buttons/NavButton";
 import ScrollToBtn from "./Links/scrollTo";
+import { StaticQuery, graphql } from "gatsby";
 
 const Nav = styled.nav`
   width: 400px;
@@ -64,7 +64,34 @@ const TopNavbar = ({ open }) => {
         />
         {show && <DropDown />}
         <ExternalLink href="https://shop.rosecitytrack.com/">Shop</ExternalLink>
-        <SmallCTAButton name="Register" type="button" />
+        <StaticQuery
+          query={graphql`
+            {
+              allSanityHomeText {
+                edges {
+                  node {
+                    id
+                    ctaButton {
+                      ctaButtonUrl
+                      ctaButtonText
+                    }
+                  }
+                }
+              }
+            }
+          `}
+          render={(data) =>
+            data.allSanityHomeText.edges.map(({ node }) => {
+              return node.ctaButton.ctaButtonText ? (
+                <SmallCTAButton
+                  key={node.id}
+                  name={node.ctaButton.ctaButtonText}
+                  url={node.ctaButton.ctaButtonUrl}
+                />
+              ) : null;
+            })
+          }
+        />
       </ul>
     </Nav>
   );

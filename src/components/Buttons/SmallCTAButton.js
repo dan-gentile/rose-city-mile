@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ExternalLink from "../Links/ExternalLink";
 
 const StyledCTAButton = styled.button`
   height: 40px;
@@ -21,7 +22,17 @@ const StyledCTAButton = styled.button`
 `;
 
 const SmallCTAButton = (props) => {
-  return <StyledCTAButton {...props}>{props.name}</StyledCTAButton>;
+  return (
+    <StyledCTAButton {...props}>
+      <ExternalLink
+        href={props.url}
+        target="_blank"
+        referrerPolicy="no-referrer"
+      >
+        {props.name}
+      </ExternalLink>
+    </StyledCTAButton>
+  );
 };
 
 export default SmallCTAButton;

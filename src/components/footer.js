@@ -50,55 +50,54 @@ const StyledUl = styled.ul`
 const Footer = () => {
   return (
     <StyledFooter>
-      <StyledUl>
-        <StaticQuery
-          query={graphql`
-            {
-              allSanitySocialLink {
-                edges {
-                  node {
-                    twitter
-                    instagram
-                    facebook
-                  }
+      <StaticQuery
+        query={graphql`
+          {
+            allSanitySocialLink {
+              edges {
+                node {
+                  id
+                  twitter
+                  instagram
+                  facebook
                 }
               }
             }
-          `}
-          render={(data) =>
-            data.allSanitySocialLink.edges.map(({ node }) => {
-              return (
-                <>
-                  <SocialLink
-                    title="Facebook"
-                    label="Link to Facebook Page"
-                    socialLink={node.facebook}
-                    fontAwesomeIcon={
-                      <FontAwesomeIcon icon={faFacebook} size="2x" />
-                    }
-                  />
-                  <SocialLink
-                    title="Twitter"
-                    label="Link to Twitter Page"
-                    socialLink={node.twitter}
-                    fontAwesomeIcon={
-                      <FontAwesomeIcon icon={faTwitter} size="2x" />
-                    }
-                  />
-                  <SocialLink
-                    title="Instagram"
-                    label="Link to Instagram Page"
-                    socialLink={node.instagram}
-                    fontAwesomeIcon={
-                      <FontAwesomeIcon icon={faInstagram} size="2x" />
-                    }
-                  />
-                </>
-              );
-            })
           }
-        />
-      </StyledUl>
+        `}
+        render={(data) =>
+          data.allSanitySocialLink.edges.map(({ node }) => {
+            return (
+              <StyledUl key={node.id}>
+                <SocialLink
+                  title="Facebook"
+                  label="Link to Facebook Page"
+                  socialLink={node.facebook}
+                  fontAwesomeIcon={
+                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  }
+                />
+                <SocialLink
+                  title="Twitter"
+                  label="Link to Twitter Page"
+                  socialLink={node.twitter}
+                  fontAwesomeIcon={
+                    <FontAwesomeIcon icon={faTwitter} size="2x" />
+                  }
+                />
+                <SocialLink
+                  title="Instagram"
+                  label="Link to Instagram Page"
+                  socialLink={node.instagram}
+                  fontAwesomeIcon={
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  }
+                />
+              </StyledUl>
+            );
+          })
+        }
+      />
     </StyledFooter>
   );
 };

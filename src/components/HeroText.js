@@ -4,12 +4,15 @@ import { StaticQuery, graphql } from "gatsby";
 import LargeCTAButton from "./Buttons/LargeCTAButton";
 
 const StyledHeroText = styled.div`
-  height: 220px;
+  height: 340px;
   width: 600px;
   margin: 40px auto;
   padding: 16px;
   color: var(--grey);
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     margin-bottom: 10px;
@@ -23,20 +26,21 @@ const StyledHeroText = styled.div`
 
   p {
     font-size: 18px;
+    margin-bottom: 30px;
   }
 
   @media (max-width: 1400px) {
-    height: 260px;
+    height: 360px;
     width: 500px;
   }
 
   @media (max-width: 600px) {
-    height: 260px;
+    height: 360px;
     width: 400px;
   }
 
   @media (max-width: 500px) {
-    height: 300px;
+    height: 400px;
     width: 340px;
   }
 `;
@@ -64,19 +68,19 @@ const HeroText = () => {
       render={(data) =>
         data.allSanityHomeText.edges.map(({ node }) => {
           return (
-            <>
-              <StyledHeroText key={node.id}>
+            <div key={node.id}>
+              <StyledHeroText>
                 <h1>{node.headline}</h1>
                 <h4>{node.eventDate}</h4>
                 <p>{node.shortDescription}</p>
+                {node.ctaButton.ctaButtonText ? (
+                  <LargeCTAButton
+                    name={node.ctaButton.ctaButtonText}
+                    url={node.ctaButton.ctaButtonUrl}
+                  />
+                ) : null}
               </StyledHeroText>
-              {node.ctaButton.ctaButtonText ? (
-                <LargeCTAButton
-                  name={node.ctaButton.ctaButtonText}
-                  url={node.ctaButton.ctaButtonUrl}
-                />
-              ) : null}
-            </>
+            </div>
           );
         })
       }
